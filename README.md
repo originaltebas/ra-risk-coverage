@@ -95,7 +95,21 @@ After the prerequisites are installed:
 	```
 	It should automatically open your default browser when ready. If you can - avoid IE especially versions less then IE 11.
 
-9. When prompted for user and password, sign-in using the pre-set user / pasword: `test@example.com` / `password`.
+9. When prompted for application user and password, sign-in using the pre-set user / pasword: `test@example.com` / `password`.
+
+10. To create new application user(s) use the following insert statement as example:
+	```sql
+	INSERT INTO amx_user (
+		USERNAME, 
+		EMAIL, 
+		PASSWORD, 
+		OPCO_ID)
+	VALUES (
+		'test', 
+		'test@example.com', 
+		SHA2('password', 256), 
+		36);
+	```
 
 ### Build for production
 
